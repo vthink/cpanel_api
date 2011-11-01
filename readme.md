@@ -1,13 +1,12 @@
-======================================
 #cPanel Api
 This is cPanel Api for accessing your cPanel
 
-#nickname	Fandi
-#email 		nunenuh@gmail.com
-#team		Virtual Think Team
-#site		http://gen5x4.wordpress.com
-#team_site	http://vthink.web.id
-======================================
+nickname	Fandi
+email 		nunenuh@gmail.com
+team		Virtual Think Team
+site		http://gen5x4.wordpress.com
+site-team	http://vthink.web.id
+
 
 #DOCUMENTATION:
 Documentation WILL BE located at http://cpanel_api.vthink.web.id/
@@ -46,8 +45,9 @@ $config['cpanel']['password'] 	-> write down your password for cpanel authentica
 ##Running
 after you finish configure cpanel_api, lets try it in your controller
 
+<?php
+
 class test extends CI_Controller{
-    
     function __construct() {
         parent::__construct();
         $this->load->spark('cpanel_api/0.5.0');
@@ -57,7 +57,6 @@ class test extends CI_Controller{
         $mail=$this->cpanel_api->mail()->list_mail();
         print_r($mail);
     }
-
 }
 
 you are now on the fire!!
