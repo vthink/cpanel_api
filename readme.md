@@ -1,8 +1,9 @@
 #cPanel Api
 This is cPanel Api for accessing your cPanel
 
-#site 	: http://vthink.web.id
-#author	: Fandi Vthink at nunenuh@gmail.com
+@site 	: http://vthink.web.id
+
+@author	: Fandi Vthink at nunenuh@gmail.com
 
 
 #DOCUMENTATION:
