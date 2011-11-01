@@ -21,9 +21,10 @@ $ php tools/spark install -v0.5.0 cpanel_api
 
 ##configuration
 okey, first let change configuration file for using your cpanel
+
 configuration file are located in : 
   
-  spark/cpanel_api/0.5.0/config/cpanel_api.php
+  $ spark/cpanel_api/0.5.0/config/cpanel_api.php
 
 the content will be like this :
 
