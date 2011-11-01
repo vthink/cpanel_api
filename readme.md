@@ -8,7 +8,10 @@ This is cPanel Api for accessing your cPanel
 
 #DOCUMENTATION:
 Documentation WILL BE located at :
-http://cpanel_api.vthink.web.id/
+	http://cpanel_api.vthink.web.id/
+
+for complete documentation about api please open this link :
+	http://docs.cpanel.net/twiki/bin/view/ApiDocs/Api2/WebHome
 
 #INSTALLATION:
 Just write in your codeigniter spark directory with this sintax
