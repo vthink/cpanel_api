@@ -1,7 +1,7 @@
 <?php
 
-$config['cpanel']['host']     = '';
-$config['cpanel']['port']     = ;
-$config['cpanel']['ssl']      = false;
-$config['cpanel']['username'] = '';
-$config['cpanel']['password'] = '';
+$config['cpanel']['host']     = 'cpanel.demo.cpanel.net';
+$config['cpanel']['port']     = 2082;
+$config['cpanel']['ssl']      = true;
+$config['cpanel']['username'] = 'x3demob';
+$config['cpanel']['password'] = 'x3demob';

@@ -2,12 +2,7 @@
 /**
  * Description of Cpanel_Api
  *
- * @author Lalu Erfandi Maula Yusnu at nunenuh@gmail.com
- * @license LGPL 2
- * @copyright @ 2011
- * @link http://www.vthink.web.id
- * @link http://gen5x4.wordpress.com
- * @name Cpanel_Api_Email
+ * @author nunenuh@gmail.com
  */
 class Cpanel_Api_Email extends Cpanel_Api_Query{
     private $param=array();

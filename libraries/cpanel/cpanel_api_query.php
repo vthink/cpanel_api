@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Class for call Query json api in CPANEL
+ * @author nunenuh@gmail.com
  * 
  */
 class Cpanel_Api_Query{

@@ -1,14 +1,8 @@
 <?php
-
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * Description of cpanel_api_stats
  *
- * @author nunenuh
+ * @author nunenuh@gmail.com
  */
 class Cpanel_Api_Stats extends Cpanel_Api_Query{
     private $param=array();
