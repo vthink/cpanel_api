@@ -8,7 +8,7 @@ This is cPanel Api for accessing your cPanel
 
 #DOCUMENTATION:
 Documentation WILL BE located at :
-	http://cpanel_api.vthink.web.id/
+	http://vthink.web.id/index.php/content/categories/19
 
 for complete documentation about api please open this link :
 	http://docs.cpanel.net/twiki/bin/view/ApiDocs/Api2/WebHome
