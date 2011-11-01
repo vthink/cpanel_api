@@ -1,15 +1,12 @@
 #cPanel Api
 This is cPanel Api for accessing your cPanel
-
-nickname	Fandi
-email 		nunenuh@gmail.com
-team		Virtual Think Team
-site		http://gen5x4.wordpress.com
-site-team	http://vthink.web.id
+site 	: http://vthink.web.id
+author	: Fandi Vthink at nunenuh@gmail.com
 
 
 #DOCUMENTATION:
-Documentation WILL BE located at http://cpanel_api.vthink.web.id/
+Documentation WILL BE located at :
+http://cpanel_api.vthink.web.id/
 
 #INSTALLATION:
 Just write in your codeigniter spark directory with this sintax
@@ -44,8 +41,6 @@ $config['cpanel']['password'] 	-> write down your password for cpanel authentica
 
 ##Running
 after you finish configure cpanel_api, lets try it in your controller
-
-<?php
 
 class test extends CI_Controller{
     function __construct() {
