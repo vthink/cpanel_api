@@ -13,7 +13,7 @@ http://cpanel_api.vthink.web.id/
 #INSTALLATION:
 Just write in your codeigniter spark directory with this sintax
 
-php tools/spark install -v0.5.0 cpanel_api
+$ php tools/spark install -v0.5.0 cpanel_api
 
 
 
