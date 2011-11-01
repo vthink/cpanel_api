@@ -8,7 +8,10 @@ This is cPanel Api for accessing your cPanel
 
 #DOCUMENTATION:
 Documentation WILL BE located at :
-http://cpanel_api.vthink.web.id/
+	http://vthink.web.id/index.php/content/categories/19
+
+for complete documentation about api please open this link :
+	http://docs.cpanel.net/twiki/bin/view/ApiDocs/Api2/WebHome
 
 #INSTALLATION:
 Just write in your codeigniter spark directory with this sintax
@@ -35,11 +38,16 @@ the content will be like this :
 	$config['cpanel']['password'] = 'x3demob';
 
 Description :
-	$config['cpanel']['host'] 	-> write down your domain in here, and without http:// or https://
-	$config['cpanel']['port'] 	-> write down your port here (2082 or 2083)
-	$config['cpanel']['ssl']  	-> write down if you want using ssl for connection mechanism (true/false)
-	$config['cpanel']['username'] 	-> write down your username for cpanel authentication
-	$config['cpanel']['password'] 	-> write down your password for cpanel authentication
+
+$config['cpanel']['host'] 	-> write down your domain in here, and without http:// or https://
+
+$config['cpanel']['port'] 	-> write down your port here (2082 or 2083)
+
+$config['cpanel']['ssl']  	-> write down if you want using ssl for connection mechanism (true/false)
+
+$config['cpanel']['username'] 	-> write down your username for cpanel authentication
+
+$config['cpanel']['password'] 	-> write down your password for cpanel authentication
 
 
 ##Running
