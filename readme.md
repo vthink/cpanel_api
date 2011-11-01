@@ -33,7 +33,7 @@ the content will be like this :
 	$config['cpanel']['username'] = 'x3demob';
 	$config['cpanel']['password'] = 'x3demob';
 
-	Description :
+Description :
 	$config['cpanel']['host'] 	-> write down your domain in here, and without http:// or https://
 	$config['cpanel']['port'] 	-> write down your port here (2082 or 2083)
 	$config['cpanel']['ssl']  	-> write down if you want using ssl for connection mechanism (true/false)
