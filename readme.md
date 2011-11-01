@@ -2,7 +2,6 @@
 This is cPanel Api for accessing your cPanel
 
 @site 	: http://vthink.web.id
-
 @author	: Fandi Vthink at nunenuh@gmail.com
 
 
@@ -13,7 +12,7 @@ http://cpanel_api.vthink.web.id/
 #INSTALLATION:
 Just write in your codeigniter spark directory with this sintax
 
-$ php tools/spark install -v0.5.0 cpanel_api
+	$ php tools/spark install -v0.5.0 cpanel_api
 
 
 
@@ -24,7 +23,7 @@ okey, first let change configuration file for using your cpanel
 
 configuration file are located in : 
   
-  $ spark/cpanel_api/0.5.0/config/cpanel_api.php
+	$ spark/cpanel_api/0.5.0/config/cpanel_api.php
 
 the content will be like this :
 
@@ -47,13 +46,13 @@ after you finish configure cpanel_api, lets try it in your controller
 
 	class test extends CI_Controller{
 	    function __construct() {
-		parent::__construct();
-		$this->load->spark('cpanel_api/0.5.0');
+			parent::__construct();
+			$this->load->spark('cpanel_api/0.5.0');
 	    }
 	    
 	    function index(){
-		$mail=$this->cpanel_api->mail()->list_mail();
-		print_r($mail);
+			$mail=$this->cpanel_api->mail()->list_mail();
+			print_r($mail);
 	    }
 	}
 
