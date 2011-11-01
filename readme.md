@@ -28,34 +28,34 @@ configuration file are located in :
 
 the content will be like this :
 
-$config['cpanel']['host']     = 'x3demob.cpx3demo.com';
-$config['cpanel']['port']     = 2082;
-$config['cpanel']['ssl']      = false;
-$config['cpanel']['username'] = 'x3demob';
-$config['cpanel']['password'] = 'x3demob';
+	$config['cpanel']['host']     = 'x3demob.cpx3demo.com';
+	$config['cpanel']['port']     = 2082;
+	$config['cpanel']['ssl']      = false;
+	$config['cpanel']['username'] = 'x3demob';
+	$config['cpanel']['password'] = 'x3demob';
 
-Description :
-$config['cpanel']['host'] 	-> write down your domain in here, and without http:// or https://
-$config['cpanel']['port'] 	-> write down your port here (2082 or 2083)
-$config['cpanel']['ssl']  	-> write down if you want using ssl for connection mechanism (true/false)
-$config['cpanel']['username'] 	-> write down your username for cpanel authentication
-$config['cpanel']['password'] 	-> write down your password for cpanel authentication
+	Description :
+	$config['cpanel']['host'] 	-> write down your domain in here, and without http:// or https://
+	$config['cpanel']['port'] 	-> write down your port here (2082 or 2083)
+	$config['cpanel']['ssl']  	-> write down if you want using ssl for connection mechanism (true/false)
+	$config['cpanel']['username'] 	-> write down your username for cpanel authentication
+	$config['cpanel']['password'] 	-> write down your password for cpanel authentication
 
 
 ##Running
 after you finish configure cpanel_api, lets try it in your controller
 
-class test extends CI_Controller{
-    function __construct() {
-        parent::__construct();
-        $this->load->spark('cpanel_api/0.5.0');
-    }
-    
-    function index(){
-        $mail=$this->cpanel_api->mail()->list_mail();
-        print_r($mail);
-    }
-}
+	class test extends CI_Controller{
+	    function __construct() {
+		parent::__construct();
+		$this->load->spark('cpanel_api/0.5.0');
+	    }
+	    
+	    function index(){
+		$mail=$this->cpanel_api->mail()->list_mail();
+		print_r($mail);
+	    }
+	}
 
 you are now on the fire!!
 
