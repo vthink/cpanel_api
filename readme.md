@@ -1,12 +1,12 @@
 ======================================
-cPanel Api
+#cPanel Api
 This is cPanel Api for accessing your cPanel
 
-@nickname	Fandi
-@email 		nunenuh@gmail.com
-@team		Virtual Think Team
-@site		http://gen5x4.wordpress.com
-@team_site	http://vthink.web.id
+#nickname	Fandi
+#email 		nunenuh@gmail.com
+#team		Virtual Think Team
+#site		http://gen5x4.wordpress.com
+#team_site	http://vthink.web.id
 ======================================
 
 #DOCUMENTATION:
@@ -46,7 +46,7 @@ $config['cpanel']['password'] 	-> write down your password for cpanel authentica
 ##Running
 after you finish configure cpanel_api, lets try it in your controller
 
-class test extends MX_Controller{
+class test extends CI_Controller{
     
     function __construct() {
         parent::__construct();
