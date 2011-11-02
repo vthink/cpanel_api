@@ -10,7 +10,8 @@ For origin of cPanel API documentation please refer to this site
  
 ##Using Library
 ###Requirement
-This Library require
+This Library required
+
 * codeigniter version 2.0.3
 * php with curl support
 * php version 5.2.x above
