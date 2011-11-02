@@ -14,16 +14,29 @@ class Cpanel_Api_Zone_Edit extends Cpanel_Api_Query{
     }
     
     /**
-     *
-     * @param type $domain
-     * @param type $name
-     * @param type $type
-     * @param type $txtdata
-     * @param type $cname
-     * @param type $address
-     * @param type $ttl
-     * @param type $class
-     * @return type 
+     * Add an A, CNAME, or TXT record to a zone file, specified by line number. 
+     * You must have access to either 'zoneedit' or 'simplezoneedit' features. 
+     * This function does not work in DEMO mode.
+     * 
+     * Descriptions<br>
+     * <b>$domain</b> The domain for which you wish to add an entry. <br>
+     * <b>$name</b> The name of the record. <br>
+     * <b>$type</b> Acceptable values include 'A', 'CNAME', or 'TXT'.<br>
+     * <b>$txtdata</b> If you specify value TXT in $type you can input TXT information with this.<br>
+     * <b>$cname</b> If you specify value CNAME in $type you can input CNAME information with this.<br>
+     * <b>$address</b> If you specify value A in $type you can input IP Address information with this.<br>
+     * <b>$ttl</b> The new record's time to live in seconds.<br>
+     * <b>$class</b> The class to be used for the record.<br>
+     * 
+     * @param type $domain string
+     * @param type $name string
+     * @param type $type string
+     * @param type $txtdata string
+     * @param type $cname string
+     * @param type $address string
+     * @param type $ttl integer
+     * @param type $class string
+     * @return type object
      */
     public function add_zone_record($domain, $name, $type,
                                     $txtdata='', $cname='',$address='',
@@ -50,16 +63,32 @@ class Cpanel_Api_Zone_Edit extends Cpanel_Api_Query{
     
   
     /**
-     *
-     * @param type $domain
-     * @param type $line
-     * @param type $type
-     * @param type $txtdata
-     * @param type $cname
-     * @param type $address
-     * @param type $ttl
-     * @param type $class
-     * @return type 
+     * Edit an A, CNAME, or TXT record in a zone file, specified by line number. 
+     * You must have access to both 'zoneedit' and 'simplezoneedit' features. 
+     * This function does not work in DEMO mode. 
+     * This function works nicely with fetch_zone() 
+     * to easily fetch line number and record information, first.
+     * 
+     * 
+     * Descriptions<br>
+     * <b>$domain</b> The domain for which you wish to edit. <br>
+     * <b>$line</b> The line number of the zone file you wish to edit<br>
+     * <b>$name</b> The name of the record. <br>
+     * <b>$type</b> Acceptable values include 'A', 'CNAME', or 'TXT'.<br>
+     * <b>$txtdata</b> If you specify value TXT in $type you can input TXT information with this.<br>
+     * <b>$cname</b> If you specify value CNAME in $type you can input CNAME information with this.<br>
+     * <b>$address</b> If you specify value A in $type you can input IP Address information with this.<br>
+     * <b>$ttl</b> The new record's time to live in seconds.<br>
+     * 
+     * @param type $domain string
+     * @param type $line integer
+     * @param type $type string
+     * @param type $txtdata string
+     * @param type $cname string
+     * @param type $address string
+     * @param type $ttl integer
+     * @param type $class string
+     * @return type object
      */
     public function edit_zone_record($domain, $line, $type, 
                                      $txtdata='',$cname='',$address='',
@@ -85,10 +114,21 @@ class Cpanel_Api_Zone_Edit extends Cpanel_Api_Query{
     }
     
     /**
-     *
-     * @param type $domain
-     * @param type $line
-     * @return type 
+     * Remove lines from a DNS zone file. 
+     * You may only remove A, TXT, and CNAME records with this function. 
+     * You must have access to either 'zoneedit' or 'simplezoneedit' to use this function. 
+     * You cannot use this function in DEMO mode.
+     * 
+     * Descriptions<br>
+     * <b>$domain</b> The domain corresponding to the zone file from 
+     * which you wish to remove a line.<br>
+     * <b>$line</b>  The line number you wish to remove. 
+     * To get line that you want to delete use fetch_zone method<br>
+     * 
+     * 
+     * @param type $domain string
+     * @param type $line integer
+     * @return type object
      */
     public function remove_zone_record($domain, $line){
         $input=array(
@@ -105,9 +145,13 @@ class Cpanel_Api_Zone_Edit extends Cpanel_Api_Query{
     }
     
     /**
-     *
-     * @param type $domain
-     * @return type 
+     * Retrieve a list of zone modifications for a specific domain.
+     * 
+     * Descriptions<br>
+     * <b>$domain</b> The domain whose zone modifications you wish to view.<br>
+     * 
+     * @param type $domain string
+     * @return type object
      */
     public function fetch_zone_records($domain){
         $input=array(
@@ -124,8 +168,9 @@ class Cpanel_Api_Zone_Edit extends Cpanel_Api_Query{
     }
     
     /**
-     *
-     * @return type 
+     * Retrieve a list of your account's zones and zone file contents.
+     * 
+     * @return type object
      */
     public function fetch_zones(){
         $input=array(
@@ -140,10 +185,18 @@ class Cpanel_Api_Zone_Edit extends Cpanel_Api_Query{
     }
     
     /**
+     * Retrieve DNS zone information for a domain. 
+     * The function's output is a list of hashes representing lines in the file.
+     * Each column with data is represented as a hash item.
+     * 
+     * Descriptions<br>
+     * <b>$domain</b> The domain that corresponds to the zone file you wish to retrieve.<br>
+     * <b>$keys</b> Acceptable values include 'line', 'ttl', 'name', 'class', 'address', 'type', 'txtdata', 'preference', and 'exchange'. <br>
+     * <b>customonly</b> If you set to 1 it will return only non-essential A and CNAME records<br>
      *
      * @param type $domain
-     * @param type $key
-     * @param type $customonly
+     * @param type $key string
+     * @param type $customonly integer
      * @return type 
      */
     public function fetch_zone($domain, $key='',$customonly=''){
@@ -163,6 +216,11 @@ class Cpanel_Api_Zone_Edit extends Cpanel_Api_Query{
     }
     
     /**
+     * Revert a zone file to its original state.
+     * 
+     * Descriptions<br>
+     * <b>$domain</b> The domain that corresponds to the zone file you wish to revert.<br>
+     * 
      * @param type $domain
      * @return type 
      */

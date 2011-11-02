@@ -3,13 +3,16 @@
 require 'cpanel/cpanel_api_query.php';
 
 //load child class
+require 'cpanel/cpanel_api_addon_domain.php';
+require 'cpanel/cpanel_api_cron.php';
 require 'cpanel/cpanel_api_email.php';
-require 'cpanel/cpanel_api_subdomain.php';
-require 'cpanel/cpanel_api_statsbar.php';
-require 'cpanel/cpanel_api_stats.php';
-require 'cpanel/cpanel_api_zone_edit.php';
-require 'cpanel/cpanel_api_net.php';
 require 'cpanel/cpanel_api_ftp.php';
+require 'cpanel/cpanel_api_mysql.php';
+require 'cpanel/cpanel_api_net.php';
+require 'cpanel/cpanel_api_stats.php';
+require 'cpanel/cpanel_api_statsbar.php';
+require 'cpanel/cpanel_api_subdomain.php';
+require 'cpanel/cpanel_api_zone_edit.php';
 
 
 /**
@@ -50,7 +53,7 @@ class Cpanel_Api {
     /**
      * Email Access
      * 
-     * @return object 
+     * @return type object 
      */
     public function mail(){
 	return new Cpanel_Api_Email($this->param);
@@ -59,7 +62,7 @@ class Cpanel_Api {
     /**
      * StatsBar Access
      * 
-     * @return object 
+     * @return type object 
      */
     public function stats_bar(){
         return new Cpanel_Api_Statsbar($this->param);
@@ -68,7 +71,7 @@ class Cpanel_Api {
     /**
      * Subdomain Access
      * 
-     * @return object 
+     * @return type object 
      */
     public function subdomain(){
         return new Cpanel_Api_Subdomain($this->param);
@@ -77,7 +80,7 @@ class Cpanel_Api {
     /**
      * Stats Access
      * 
-     * @return object 
+     * @return type object 
      */
     public function stats(){
         return new Cpanel_Api_Stats($this->param);
@@ -86,7 +89,7 @@ class Cpanel_Api {
     /**
      * ZoneEdit Access
      * 
-     * @return object 
+     * @return type object 
      */
     public function zone_edit(){
         return new Cpanel_Api_Zone_Edit($this->param);
@@ -95,7 +98,7 @@ class Cpanel_Api {
     /**
      * Net Access
      * 
-     * @return object 
+     * @return type object 
      */
     public function net(){
         return new Cpanel_Api_Net($this->param);
@@ -104,10 +107,34 @@ class Cpanel_Api {
     /**
      * FTP Access
      * 
-     * @return object 
+     * @return type object 
      */
     public function ftp(){
         return new Cpanel_Api_Ftp($this->param);
+    }
+    
+    /**
+     * MySQL Access
+     * @return type object
+     */
+    public function mysql(){
+        return new Cpanel_Api_Mysql($this->param);
+    }
+    
+    /**
+     * Addon Domain Access
+     * @return type object
+     */
+    public function addon_domain(){
+        return new Cpanel_Api_Addon_Domain($this->param);
+    }
+    
+    /**
+     * Cron Access
+     * @return type object
+     */
+    public function cron(){
+        return new Cpanel_Api_Cron($this->param);
     }
     
     /**
