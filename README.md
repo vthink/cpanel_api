@@ -20,13 +20,13 @@ Configuration file is located in
 
   `sparks/cpanel_api/0.5.0/config/cpanel_api.php`
 
-The content of configuration file will be like this.
+The content of configuration file will be like this :
 
-  $config['cpanel']['host']      = 'x3demob.cpx3demo.com';
-  $config['cpanel']['port']      = 2082;
-  $config['cpanel']['ssl']       = false;
-  $config['cpanel']['username']  = 'x3demob';
-  $config['cpanel']['password']  = 'x3demob';
+      $config['cpanel']['host']      = 'x3demob.cpx3demo.com';
+      $config['cpanel']['port']      = 2082;
+      $config['cpanel']['ssl']       = false;
+      $config['cpanel']['username']  = 'x3demob';
+      $config['cpanel']['password']  = 'x3demob';
    
 ####Description
 * $config['cpanel']['host']     *write down your domain in here, and without http:// or https://)*
