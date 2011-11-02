@@ -20,7 +20,7 @@ This Library require
 Okey, before it can be user well the first thing to do is change the configuration file.
 Configuration file is located in 
 
-  `sparks/cpanel_api/0.5.0/config/cpanel_api.php`
+  `sparks/cpanel_api/0.7.0/config/cpanel_api.php`
 
 The content of configuration file will be like this.
 
