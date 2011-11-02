@@ -27,13 +27,13 @@ configuration file are located in :
 
 the content will be like this :
 
-<code 
+<code>
 	      $config['cpanel']['host']     = 'x3demob.cpx3demo.com';
 	      $config['cpanel']['port']     = 2082;
 	      $config['cpanel']['ssl']      = false;
 	      $config['cpanel']['username'] = 'x3demob';
 	      $config['cpanel']['password'] = 'x3demob';
->
+</code>
 
 ####Description
 * $config['cpanel']['host']     (write down your domain in here, and without http:// or https://) 
