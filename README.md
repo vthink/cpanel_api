@@ -1,13 +1,13 @@
 #cPanel Api
-This is cPanel Api for accessing your cPanel
+This library allow you to access and modify your cpanel domain owner type
 
 * site 	: http://vthink.web.id
 * author	: Fandi Vthink at nunenuh@gmail.com
 
 
 ##DOCUMENTATION:
-Documentation WILL BE located at :
-http://cpanel_api.vthink.web.id/
+Documentation WILL BE located at 
+* http://vthink.web.id/index.php/content/categories/19
 
 ##INSTALLATION:
 Just write in your codeigniter spark directory with this sintax
