@@ -10,7 +10,8 @@ For origin of cPanel API documentation please refer to this site
  
 ##Using Library
 ###Requirement
-This Library require
+This Library required
+
 * codeigniter version 2.0.3
 * php with curl support
 * php version 5.2.x above
@@ -55,4 +56,5 @@ Now, you are on the fire!!!
 
 ##Limitation
 cpanel_api that i've created only can handle cpanel domain owner type. In the future release I will try to catch up for Web Hosting Manager type.
+
 
