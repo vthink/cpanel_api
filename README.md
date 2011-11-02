@@ -21,13 +21,12 @@ Configuration file is located in
   `sparks/cpanel_api/0.5.0/config/cpanel_api.php`
 
 The content of configuration file will be like this.
-<code>
+
    $config['cpanel']['host']      = 'x3demob.cpx3demo.com';
    $config['cpanel']['port']      = 2082;
    $config['cpanel']['ssl']       = false;
    $config['cpanel']['username']  = 'x3demob';
    $config['cpanel']['password']  = 'x3demob';
-</code>
    
 ####Description
 * $config['cpanel']['host']     *write down your domain in here, and without http:// or https://)*
@@ -39,7 +38,6 @@ The content of configuration file will be like this.
 ###Running It
 Okey, after you finished change your configuration file, try this code
 
-<code>
         class test extends CI_Controller{
           function __construct() {
             parent::__construct();
@@ -50,7 +48,7 @@ Okey, after you finished change your configuration file, try this code
             print_r($mail);
           }
         }
-</code>
+
 
 Now, you are on the fire!!!
 
