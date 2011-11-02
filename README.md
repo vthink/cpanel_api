@@ -4,6 +4,7 @@ This spark library that allow you to manipulate your cpanel based on cpanel api 
 ##Documentation
 For updates and documentation based on this api pelase refer to this site
 * http://vthink.web.id/index.php/content/categories/19
+
 For origin of cPanel API documentation please refer to this site
 * http://docs.cpanel.net/twiki/bin/view/ApiDocs/Api2/WebHome
  
@@ -22,11 +23,11 @@ Configuration file is located in
 
 The content of configuration file will be like this.
 
-   $config['cpanel']['host']      = 'x3demob.cpx3demo.com';
-   $config['cpanel']['port']      = 2082;
-   $config['cpanel']['ssl']       = false;
-   $config['cpanel']['username']  = 'x3demob';
-   $config['cpanel']['password']  = 'x3demob';
+    $config['cpanel']['host']      = 'x3demob.cpx3demo.com';
+    $config['cpanel']['port']      = 2082;
+    $config['cpanel']['ssl']       = false;
+    $config['cpanel']['username']  = 'x3demob';
+    $config['cpanel']['password']  = 'x3demob';
    
 ####Description
 * $config['cpanel']['host']     *write down your domain in here, and without http:// or https://)*
