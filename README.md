@@ -19,7 +19,7 @@ This Library require
 Okey, before it can be user well the first thing to do is change the configuration file.
 Configuration file is located in 
 
-  `sparks/cpanel_api/0.5.0/config/cpanel_api.php`
+  `sparks/cpanel_api/0.6.0/config/cpanel_api.php`
 
 The content of configuration file will be like this.
 
@@ -42,7 +42,7 @@ Okey, after you finished change your configuration file, try this code
         class test extends CI_Controller{
           function __construct() {
             parent::__construct();
-            $this->load->spark('cpanel_api/0.5.0');
+            $this->load->spark('cpanel_api/0.6.0');
           }
           function index(){
             $mail=$this->cpanel_api->mail()->list_mail();
