@@ -43,7 +43,7 @@ Okey, after you finished change your configuration file, try this code
         class test extends CI_Controller{
           function __construct() {
             parent::__construct();
-            $this->load->spark('cpanel_api/0.5.0');
+            $this->load->spark('cpanel_api/0.7.0');
           }
           function index(){
             $mail=$this->cpanel_api->mail()->list_mail();
