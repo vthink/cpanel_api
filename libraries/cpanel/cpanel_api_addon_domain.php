@@ -58,7 +58,7 @@ class Cpanel_Api_Addon_Domain extends Cpanel_Api_Query{
         $input=array(
                     'module'    => 'AddonDomain',
                     'function'  => 'addaddondomain',
-                    'domain'    => $domain,
+                    'dir'       => $dir,
                     'newdomain' => $new_domain,
                     'subdomain' => $subdomain
                     );
