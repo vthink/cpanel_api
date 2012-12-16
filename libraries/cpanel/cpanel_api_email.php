@@ -3,6 +3,7 @@
  * Description of Cpanel_Api
  *
  * @author nunenuh@gmail.com
+ * @modified by: Dean Elzey @ BitShout
  */
 class Cpanel_Api_Email extends Cpanel_Api_Query{
     private $param=array();
@@ -21,6 +22,7 @@ class Cpanel_Api_Email extends Cpanel_Api_Query{
      */
     public function  list_mail(){
         $input=array(
+                    'apiversion' => 2,
                     'module'    => 'Email',
                     'function'  => 'listpopswithdisk'
                     );
@@ -50,6 +52,7 @@ class Cpanel_Api_Email extends Cpanel_Api_Query{
      */
     public function add_mail($domain, $email, $password, $quota){
         $input=array(
+                    'apiversion' => 2,
                     'module'    => 'Email',
                     'function'  => 'addpop',
                     'domain'    => $domain,
@@ -84,6 +87,7 @@ class Cpanel_Api_Email extends Cpanel_Api_Query{
      */
     public function edit_mail_quota($domain, $email, $quota){
         $input=array(
+                    'apiversion' => 2,
                     'module'    => 'Email',
                     'function'  => 'editquota',
                     'domain'    => $domain,
@@ -115,6 +119,7 @@ class Cpanel_Api_Email extends Cpanel_Api_Query{
      */
     public function delete_mail($domain, $email){
         $input=array(
+                    'apiversion' => 2,
                     'module'    => 'Email',
                     'function'  => 'delpop',
                     'domain'    => $domain,
@@ -146,6 +151,7 @@ class Cpanel_Api_Email extends Cpanel_Api_Query{
      */
     public function update_mail_password($domain, $email, $new_password){
         $input=array(
+                    'apiversion' => 2,
                     'module'    => 'Email',
                     'function'  => 'passwdpop',
                     'domain'    => $domain,
@@ -175,6 +181,7 @@ class Cpanel_Api_Email extends Cpanel_Api_Query{
      */
     public function list_mx($domain=''){
         $input=array(
+                    'apiversion' => 2,
                     'module'    => 'Email',
                     'function'  => 'listmxs'
                );
@@ -212,6 +219,7 @@ class Cpanel_Api_Email extends Cpanel_Api_Query{
      */
     public function add_mx($domain, $exchange, $preference, $always_accept=''){
         $input=array(
+                    'apiversion' => 2,
                     'module'        => 'Email',
                     'function'      => 'addmx',
                     'domain'        => $domain,
@@ -252,6 +260,7 @@ class Cpanel_Api_Email extends Cpanel_Api_Query{
      */
     public function change_mx($domain, $exchange, $old_exchange, $old_preference, $preference, $always_accept=''){
         $input=array(
+                    'apiversion' => 2,
                     'module'        => 'Email',
                     'function'      => 'changemx',
                     'domain'        => $domain,
@@ -284,6 +293,7 @@ class Cpanel_Api_Email extends Cpanel_Api_Query{
      */
     public function delete_mx($domain, $exchange, $preference){
         $input=array(
+                    'apiversion' => 2,
                     'module'        => 'Email',
                     'function'      => 'delmx',
                     'domain'        => $domain,
@@ -321,6 +331,7 @@ class Cpanel_Api_Email extends Cpanel_Api_Query{
      */
     public function set_mx_check($domain, $mxcheck){
          $input=array(
+                    'apiversion' => 2,
                     'module'        => 'Email',
                     'function'      => 'setmxcheck',
                     'domain'        => $domain,
@@ -346,6 +357,7 @@ class Cpanel_Api_Email extends Cpanel_Api_Query{
     
     public function list_forwarders($domain='', $regex=''){
         $input=array(
+                    'apiversion' => 2,
                     'module'        => 'Email',
                     'function'      => 'listforwards'
                );
@@ -391,6 +403,7 @@ class Cpanel_Api_Email extends Cpanel_Api_Query{
     public function add_forwader($domain, $email, $fwdopt, 
                                  $fwdemail='', $fwdsystem='',$failmsgs='',$pipefwd=''){
         $input=array(
+                    'apiversion' => 2,
                     'module'        => 'Email',
                     'function'      => 'addforward',
                     'domain'        => $domain,
@@ -421,6 +434,7 @@ class Cpanel_Api_Email extends Cpanel_Api_Query{
      */
     public function list_default_adresses($domain){
         $input=array(
+                    'apiversion' => 2,
                     'module'        => 'Email',
                     'function'      => 'listdefaultaddresses',
                     'domain'        => $domain
@@ -460,6 +474,7 @@ class Cpanel_Api_Email extends Cpanel_Api_Query{
      */
     public function set_default_address($fwdopt, $domain, $failmsgs='', $fwdemail='', $pipefwd=''){
         $input=array(
+                    'apiversion' => 2,
                     'module'        => 'Email',
                     'function'      => 'setdefaultaddress',
                     'fwdopt'        => $fwdopt,
