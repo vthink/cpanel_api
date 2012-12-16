@@ -3,6 +3,7 @@
  * Description of cpanel_api_statsbar
  *
  * @author nunenuh@gmail.com
+ * @modified by: Dean Elzey @ BitShout
  */
 class Cpanel_Api_Statsbar extends Cpanel_Api_Query{
     private $param=array();
@@ -40,7 +41,8 @@ class Cpanel_Api_Statsbar extends Cpanel_Api_Query{
      */
     public function stats($display){
         $input=array(
-                    'module'    => 'StatsBar',
+                    'apiversion' => 2,
+            		'module'    => 'StatsBar',
                     'function'  => 'stat',
                     'display'   => $display
                     );
