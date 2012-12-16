@@ -19,12 +19,14 @@ require 'cpanel/cpanel_api_zone_edit.php';
  * Description of Cpanel_Api
  *
  * @author Lalu Erfandi Maula Yusnu at nunenuh@gmail.com
+ * @Modified by Dean Elzey @ BitShout
  * @license LGPL 2
  * @copyright @ 2011 Mataram Nusa Tenggara Barat Indonesia
  * @link http://www.vthink.web.id
  * @link http://gen5x4.wordpress.com
+ * @link http://www.bitshout.com
  * @name Cpanel_Api
- * @version 1.0.0
+ * @version 1.1.0
  */
 class Cpanel_Api {
     private $CI;
@@ -148,4 +150,3 @@ class Cpanel_Api {
         
         
 }
-
