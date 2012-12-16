@@ -4,6 +4,7 @@
  * Description of cpanel_api_mysql
  *
  * @author nunenuh@gmail.com
+ * @modified by: Dean Elzey @ BitShout
  */
 class Cpanel_Api_Mysql extends Cpanel_Api_Query{
     private $param=array();
@@ -26,7 +27,8 @@ class Cpanel_Api_Mysql extends Cpanel_Api_Query{
      */
     public function user_db_privs($db, $user){
         $input=array(
-                    'module'    => 'MysqlFE',
+                    'apiversion' => 2,
+            		'module'    => 'MysqlFE',
                     'function'  => 'userdbprivs',
                     'db'        => $db,
                     'user'      => $user
@@ -50,7 +52,8 @@ class Cpanel_Api_Mysql extends Cpanel_Api_Query{
      */
     public function list_dbs($regex=''){
         $input=array(
-                    'module'    => 'MysqlFE',
+                    'apiversion' => 2,
+        			'module'    => 'MysqlFE',
                     'function'  => 'listdbs'
                     );
         !empty($regex) && array_push($input, array('regex'=>$regex));
@@ -66,7 +69,8 @@ class Cpanel_Api_Mysql extends Cpanel_Api_Query{
      */
     public function list_dbs_backup(){
        $input=array(
-                    'module'    => 'MysqlFE',
+                    'apiversion' => 2,
+        			'module'    => 'MysqlFE',
                     'function'  => 'listdbsbackup'
                     );
         $query=$this->build_query($input);
@@ -87,7 +91,8 @@ class Cpanel_Api_Mysql extends Cpanel_Api_Query{
      */
     public function list_users_in_db($db){
         $input=array(
-                    'module'    => 'MysqlFE',
+                    'apiversion' => 2,
+        			'module'    => 'MysqlFE',
                     'function'  => 'listusersindb'
                     );
         !empty($db) && array_push($input, array('db'=>$db));
@@ -104,7 +109,8 @@ class Cpanel_Api_Mysql extends Cpanel_Api_Query{
      */
     public function list_hosts(){
         $input=array(
-                    'module'    => 'MysqlFE',
+                    'apiversion' => 2,
+        			'module'    => 'MysqlFE',
                     'function'  => 'listhosts'
                     );
 
@@ -120,7 +126,8 @@ class Cpanel_Api_Mysql extends Cpanel_Api_Query{
      */
     public function list_users(){
         $input=array(
-                    'module'    => 'MysqlFE',
+                    'apiversion' => 2,
+        			'module'    => 'MysqlFE',
                     'function'  => 'listusers'
                     );
         $query=$this->build_query($input);
@@ -128,6 +135,58 @@ class Cpanel_Api_Mysql extends Cpanel_Api_Query{
         $ob=json_decode($raw, false);
         return $status=$ob->cpanelresult->data;
         
+    }
+    
+    /**
+     * Remove a user from MySQL.
+     * @return type object
+     */
+    public function del_db_user($dbuser){
+        $input=array(
+        			'apiversion' => 1,            
+        			'module'    => 'Mysql',
+                    'function'  => 'deluser',
+                    'arg-0'		=> $dbuser
+                    );
+        $query=$this->build_query($input);
+        $raw=$this->query($query);
+        $ob=json_decode($raw, false);
+        return $ob->data->result;
+    }
+
+    /**
+     * Remove a database from MySQL.
+     * @return type object
+     */
+    public function del_db($db){
+        $input=array(
+                    'apiversion' => 1,            
+        			'module'    => 'Mysql',
+                    'function'  => 'deldb',
+                    'arg-0'		=> $db
+                    );
+        $query=$this->build_query($input);
+        $raw=$this->query($query);
+        $ob=json_decode($raw, false);
+        return $ob->data->result;
+    }
+    
+	/**
+     * Retrieve the number of databases currently in use.
+     * 
+     * @return type object
+     */
+    public function numb_dbs()
+    {
+        $input=array(
+                    'apiversion' => 1,
+        			'module'     => 'Mysql',
+                    'function'   => 'number_of_dbs'
+                    );
+        $query=$this->build_query($input);
+        $raw=$this->query($query);
+        $ob=json_decode($raw, false);
+        return $ob->data->result;
     }
 
 }
