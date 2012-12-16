@@ -1,5 +1,5 @@
 #cpanel_api
-This spark library that allow you to manipulate your cpanel based on cpanel api json function call.
+This library allow you to manipulate cpanel using the cpanel api json function call. This library can be used with spark or without. Some modifications may be needed.
 
 ##Documentation
 For updates and documentation based on this api pelase refer to this site
@@ -10,17 +10,17 @@ For origin of cPanel API documentation please refer to this site
  
 ##Using Library
 ###Requirement
-This Library require
+This Library requires
 
-* codeigniter version 2.0.3
+* codeigniter version 2.x
 * php with curl support
-* php version 5.2.x above
+* php version 5.2.x or above
 
 ###Configuration
-Okey, before it can be user well the first thing to do is change the configuration file.
+Before it can be used, the first thing to do is change the configuration file.
 Configuration file is located in 
 
-  `sparks/cpanel_api/0.7.0/config/cpanel_api.php`
+  `config/cpanel_api.php`
 
 The content of configuration file will be like this.
 
@@ -38,12 +38,16 @@ The content of configuration file will be like this.
 * $config['cpanel']['password'] *write down your password for cpanel authentication)*
 
 ###Running It
-Okey, after you finished change your configuration file, try this code
+After updating your configuration file, try this code
 
         class test extends CI_Controller{
           function __construct() {
             parent::__construct();
+            // if using spark use the line below:
             $this->load->spark('cpanel_api/0.7.0');
+            
+            // if not using spark, use the line below
+            $this->load->library('cpanel_api');
           }
           function index(){
             $mail=$this->cpanel_api->mail()->list_mail();
@@ -55,4 +59,5 @@ Okey, after you finished change your configuration file, try this code
 Now, you are on the fire!!!
 
 ##Limitation
-cpanel_api that i've created only can handle cpanel domain owner type. In the future release I will try to catch up for Web Hosting Manager type.
+Version 1.1.0 allows you to call both API 1 and API 2 calls. This is configured within the function itself using the example below as part of the input array:
+    'apiversion' => 2,
