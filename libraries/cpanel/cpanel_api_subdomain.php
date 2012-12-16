@@ -3,6 +3,7 @@
  * Description of Cpanel_Api_Subdomain
  * 
  * @author nunenuh@gmail.com
+ * @modified by: Dean Elzey @ BitShout
  */
 class Cpanel_Api_Subdomain extends Cpanel_Api_Query{
     private $param= array();
@@ -23,6 +24,7 @@ class Cpanel_Api_Subdomain extends Cpanel_Api_Query{
      */
     public function list_subdomain($regex=''){
         $input=array(
+                    'apiversion' => 2,
                     'module'    => 'SubDomain',
                     'function'  => 'listsubdomains'
                     );
@@ -51,6 +53,7 @@ class Cpanel_Api_Subdomain extends Cpanel_Api_Query{
      */
     public function add_subdomain($domain, $rootdomain, $dir='', $disallowdot=''){
         $input=array(
+                    'apiversion' => 2,
                     'module'        => 'SubDomain',
                     'function'      => 'addsubdomain',
                     'domain'        => $domain,
@@ -81,6 +84,7 @@ class Cpanel_Api_Subdomain extends Cpanel_Api_Query{
      */
     public function delete_subdomain($domain){
         $input=array(
+                    'apiversion' => 2,
                     'module'        => 'SubDomain',
                     'function'      => 'delsubdomain',
                     'domain'        =>  $domain

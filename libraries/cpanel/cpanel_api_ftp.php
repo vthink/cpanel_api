@@ -4,6 +4,7 @@
  * Description of cpanel_api_ftp
  *
  * @author nunenuh@gmail.com
+ * @modified by: Dean Elzey @ BitShout
  */
 class Cpanel_Api_Ftp extends Cpanel_Api_Query {
     private $param=array();
@@ -25,6 +26,7 @@ class Cpanel_Api_Ftp extends Cpanel_Api_Query {
      */
     public function list_ftp($include_acct_types, $skip_acct_types){
         $input=array(
+                    'apiversion' => 2,
                     'module'                => 'Ftp',
                     'function'              => 'listftp',
                     'include_acct_types'    => $include_acct_types,
@@ -44,6 +46,7 @@ class Cpanel_Api_Ftp extends Cpanel_Api_Query {
      */
     public function list_ftp_sessions(){
         $input=array(
+                    'apiversion' => 2,
                     'module'                => 'Ftp',
                     'function'              => 'listftpsessions'
                     );
@@ -69,6 +72,7 @@ class Cpanel_Api_Ftp extends Cpanel_Api_Query {
      */
     public function list_ftp_with_disk($dirhtml, $include_acct_types='', $skip_acct_types=''){
         $input=array(
+                    'apiversion' => 2,
                     'module'    => 'Ftp',
                     'function'  => 'listftpwithdisk',
                     'dirhtml'   => $dirhtml
@@ -95,6 +99,7 @@ class Cpanel_Api_Ftp extends Cpanel_Api_Query {
      */
     public function passwd($user, $new_pass){
         $input=array(
+                    'apiversion' => 2,
                     'module'    => 'Ftp',
                     'function'  => 'passwd',
                     'user'      => $user,
@@ -125,6 +130,7 @@ class Cpanel_Api_Ftp extends Cpanel_Api_Query {
      */
     public function add_ftp($user, $pass, $quota, $homedir){
         $input=array(
+                    'apiversion' => 2,
                     'module'    => 'Ftp',
                     'function'  => 'addftp',
                     'user'      => $user,
@@ -153,6 +159,7 @@ class Cpanel_Api_Ftp extends Cpanel_Api_Query {
      */
     public function set_quota($user, $quota){
         $input=array(
+                    'apiversion' => 2,
                     'module'    => 'Ftp',
                     'function'  => 'setquota',
                     'user'      => $user,
@@ -179,6 +186,7 @@ class Cpanel_Api_Ftp extends Cpanel_Api_Query {
      */
     public function delete_ftp($user,$destroy=false){
         $input=array(
+                    'apiversion' => 2,
                     'module'    => 'Ftp',
                     'function'  => 'delftp',
                     'user'      => $user,

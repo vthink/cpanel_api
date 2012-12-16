@@ -2,6 +2,7 @@
 
 /**
  * @author nunenuh@gmail.com
+ * @modified by: Dean Elzey @ BitShout
  * 
  */
 class Cpanel_Api_Query{
@@ -34,7 +35,7 @@ class Cpanel_Api_Query{
     public function query($query){
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_SSL_VERIFYPEER,0);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST,0); 	
+        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST,0);     
         curl_setopt($curl, CURLOPT_HEADER,0);			
         curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);	
         $header[0] = "Authorization:  Basic " . $this->hash . "\n\r";
@@ -72,10 +73,12 @@ class Cpanel_Api_Query{
         $out='';
         if ($check==2){
             $out='cpanel_jsonapi_module='.$param['module'].'&';
-            $out.='cpanel_jsonapi_func='.$param['function'];
+            $out='cpanel_jsonapi_func='.$param['function'].'&';
+            $out.='cpanel_jsonapi_apiversion='.$param['apiversion'];
         } else {
             $out='cpanel_jsonapi_module='.$param['module'].'&';
             $out.='cpanel_jsonapi_func='.$param['function'].'&';
+            $out.='cpanel_jsonapi_apiversion='.$param['apiversion'].'&';
         }
         
         $a=1;
