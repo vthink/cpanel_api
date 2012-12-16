@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
- * Description of Cpanel_Api
+ * Description of Cpanel_Api_Email
  *
  * @author nunenuh@gmail.com
  * @modified by: Dean Elzey @ BitShout
