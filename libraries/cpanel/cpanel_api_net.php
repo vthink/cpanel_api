@@ -4,6 +4,7 @@
  * Description of cpanel_api_net
  *
  * @author nunenuh@gmail.com
+ * @modified by: Dean Elzey @ BitShout
  */
 class Cpanel_Api_Net extends Cpanel_Api_Query {
     private $param=array();
@@ -21,6 +22,7 @@ class Cpanel_Api_Net extends Cpanel_Api_Query {
      */
     public function traceroute(){
         $input=array(
+                    'apiversion' => 2,
                     'module'    => 'Net',
                     'function'  => 'traceroute'
                     );
@@ -43,6 +45,7 @@ class Cpanel_Api_Net extends Cpanel_Api_Query {
      */
     public function dns_zone($host){
         $input=array(
+                    'apiversion' => 2,
                     'module'    => 'Net',
                     'function'  => 'dnszone',
                     'host'      => $host
