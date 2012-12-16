@@ -4,6 +4,7 @@
  * Description of cpanel_api_cron
  *
  * @author nunenuh@gmail.com
+ * @modified by: Dean Elzey @ BitShout
  */
 class Cpanel_Api_Cron extends Cpanel_Api_Query{
     private $param=array();
@@ -25,7 +26,8 @@ class Cpanel_Api_Cron extends Cpanel_Api_Query{
      */
     public function set_email($email){
         $input=array(
-                    'module'    => 'Cron',
+                    'apiversion' => 2,
+            		'module'    => 'Cron',
                     'function'  => 'set_email',
                     'email'    => $email
                     );
@@ -44,6 +46,7 @@ class Cpanel_Api_Cron extends Cpanel_Api_Query{
      */
     public function list_cron(){
         $input=array(
+                    'apiversion' => 2,
                     'module'    => 'Cron',
                     'function'  => 'listcron'
                     );
@@ -74,6 +77,7 @@ class Cpanel_Api_Cron extends Cpanel_Api_Query{
      */
     public function add_cron($command, $day, $hour, $minute, $month, $weekday){
         $input=array(
+                    'apiversion' => 2,
                     'module'    => 'Cron',
                     'function'  => 'add_line',
                     'command'   => $command,
@@ -101,7 +105,8 @@ class Cpanel_Api_Cron extends Cpanel_Api_Query{
      */
     public function remove_cron($line){
         $input=array(
-                    'module'    => 'Cron',
+                    'apiversion' => 2,
+        			'module'    => 'Cron',
                     'function'  => 'remove_line',
                     'line'      => $line
                     );
@@ -121,6 +126,7 @@ class Cpanel_Api_Cron extends Cpanel_Api_Query{
      */
     public function get_email(){
         $input=array(
+                    'apiversion' => 2,
                     'module'    => 'Cron',
                     'function'  => 'get_email'
                     );
@@ -154,6 +160,7 @@ class Cpanel_Api_Cron extends Cpanel_Api_Query{
      */
     public function edit_cron($command, $day, $hour, $minute, $month, $weekday, $linekey){
         $input=array(
+                    'apiversion' => 2,
                     'module'    => 'Cron',
                     'function'  => 'add_line',
                     'command'   => $command,
