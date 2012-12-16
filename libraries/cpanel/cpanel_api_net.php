@@ -1,59 +1,97 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /**
- * Description of cpanel_api_net
- *
  * @author nunenuh@gmail.com
  * @modified by: Dean Elzey @ BitShout
+ * 
  */
-class Cpanel_Api_Net extends Cpanel_Api_Query {
-    private $param=array();
+class Cpanel_Api_Query{
+    private $host;
+    private $port;
+    private $username;
+    private $password;
+    private $api;
+    private $ssl;
+    private $hash;
     
-    function __construct($param) {
-        $this->param = $param;
-        parent::__construct($this->param);
-    }
     
-    /**
-     * Perform a traceroute back to your local IP address 
-     * while displaying packet speed at each hop in milliseconds.
-     * 
-     * @return type object
-     */
-    public function traceroute(){
-        $input=array(
-                    'apiversion' => 2,
-                    'module'    => 'Net',
-                    'function'  => 'traceroute'
-                    );
-        $query=$this->build_query($input);
-        $raw=$this->query($query);
-        $ob=json_decode($raw, false);
-        return $status=$ob->cpanelresult->data;
-    }
-    
-    /**
-     * This API call performs an A record DNS query for the 
-     * hostname presented via the 'host' variable, with a 60 second timeout. 
-     * If more than one A record exists for a given FQDN, all will be returned.
-     * 
-     * Descriptions<br>
-     * <b>$host</b> This value is a fully qualified domain name. 
-     * Either host.domain.com, or domain.com, i.e., www.cpanel.net, or simply cpanel.net.<br>
-     * 
-     * @param type object
-     */
-    public function dns_zone($host){
-        $input=array(
-                    'apiversion' => 2,
-                    'module'    => 'Net',
-                    'function'  => 'dnszone',
-                    'host'      => $host
-                    );
-        $query=$this->build_query($input);
-        $raw=$this->query($query);
-        $ob=json_decode($raw, false);
-        return $status=$ob->cpanelresult->data;
+    function __construct($param=array()) {
+        $this->hash     = base64_encode($param['username'] . ':' . $param['password']);
+        $this->host     = $param['host'];
+        $this->port     = intval($param['port']);
+        $this->ssl      = $param['ssl'] ? 'https://' : 'http://';
+        $this->password = $param['password'];
+        $this->username = $param['username'];
+        $this->api      = 'json-api/cpanel?';
     }
 
+    /**
+     * This method for call cpanel api with
+     * raw query, use this method with build_query method
+     * to call cpanel api with valid request
+     * @param type $query
+     * @return type json
+     */
+    public function query($query){
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER,0);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST,0);     
+        curl_setopt($curl, CURLOPT_HEADER,0);			
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER,1);	
+        $header[0] = "Authorization:  Basic " . $this->hash . "\n\r";
+        curl_setopt($curl,CURLOPT_HTTPHEADER,$header);
+        curl_setopt($curl, CURLOPT_URL, $query);
+        $result = curl_exec($curl);
+        if ($result == false) {
+            error_log("curl_exec threw error \"" . curl_error($curl) . "\" for $query");
+        }
+        curl_close($curl);
+
+        return $result;
+    }
+    
+    /**
+     * This method for building valid query
+     * for access cpanel api json function
+     * @param type $param array
+     * @return type string
+     */
+    public function build_query($param=array()){
+        $base=$this->ssl.$this->host.':'.$this->port.'/'.$this->api;
+        $build=$this->__build($param);
+        return $base.$build;
+    }
+    
+    /**
+     * This method for building dynamic query
+     * based on valid paramater of cpanel api json function
+     * @param type $param
+     * @return string 
+     */
+    private function __build($param=array()){
+        $check=count($param);
+        $out='';
+        if ($check==2){
+            $out='cpanel_jsonapi_module='.$param['module'].'&';
+            $out='cpanel_jsonapi_func='.$param['function'].'&';
+            $out.='cpanel_jsonapi_apiversion='.$param['apiversion'];
+        } else {
+            $out='cpanel_jsonapi_module='.$param['module'].'&';
+            $out.='cpanel_jsonapi_func='.$param['function'].'&';
+            $out.='cpanel_jsonapi_apiversion='.$param['apiversion'].'&';
+        }
+        
+        $a=1;
+        foreach ($param as $key => $val){
+           if (($key!='function')&&($key!='module')){
+               if ($a<=$check-2){
+                   $out.=$key.'='.$val.'&';
+               } else {
+                    $out.=$key.'='.$val;
+               }
+           }
+           $a++;
+        }
+        return $out;
+    }
 }
