@@ -3,6 +3,7 @@
  * Description of cpanel_api_stats
  *
  * @author nunenuh@gmail.com
+ * @modified by: Dean Elzey @ BitShout
  */
 class Cpanel_Api_Stats extends Cpanel_Api_Query{
     private $param=array();
@@ -20,6 +21,7 @@ class Cpanel_Api_Stats extends Cpanel_Api_Query{
      */
     public function list_webalizer(){
         $input=array(
+                    'apiversion' => 2,
                     'module'    => 'Stats',
                     'function'  => 'listwebalizer',
                     );
@@ -39,6 +41,7 @@ class Cpanel_Api_Stats extends Cpanel_Api_Query{
      */
     public function list_awstats(){
         $input=array(
+                    'apiversion' => 2,
                     'module'    => 'Stats',
                     'function'  => 'listawstats',
                     );
@@ -58,6 +61,7 @@ class Cpanel_Api_Stats extends Cpanel_Api_Query{
      */
     public function list_last_visitors(){
         $input=array(
+                    'apiversion' => 2,
                     'module'    => 'Stats',
                     'function'  => 'listlastvisitors',
                     );
@@ -73,6 +77,7 @@ class Cpanel_Api_Stats extends Cpanel_Api_Query{
      */
     public function list_urchin(){
         $input=array(
+                    'apiversion' => 2,
                     'module'    => 'Stats',
                     'function'  => 'listurchin',
                     );
@@ -90,6 +95,7 @@ class Cpanel_Api_Stats extends Cpanel_Api_Query{
      */
     public function list_rawlogs(){
         $input=array(
+                    'apiversion' => 2,
                     'module'    => 'Stats',
                     'function'  => 'listrawlogs',
                     );
@@ -108,6 +114,7 @@ class Cpanel_Api_Stats extends Cpanel_Api_Query{
      */
     public function list_analog(){
         $input=array(
+                    'apiversion' => 2,
                     'module'    => 'Stats',
                     'function'  => 'listanalog',
                     );
