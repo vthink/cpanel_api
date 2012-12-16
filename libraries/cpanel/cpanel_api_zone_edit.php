@@ -4,6 +4,7 @@
  * Description of cpanel_api_zone_edit
  *
  * @author nunenuh@gmail.com
+ * @modified by: Dean Elzey @ BitShout
  */
 class Cpanel_Api_Zone_Edit extends Cpanel_Api_Query{
     private $param=array();
@@ -42,6 +43,7 @@ class Cpanel_Api_Zone_Edit extends Cpanel_Api_Query{
                                     $txtdata='', $cname='',$address='',
                                     $ttl='',$class=''){
         $input=array(
+                    'apiversion' => 2,
                     'module'    => 'ZoneEdit',
                     'function'  => 'add_zone_record',
                     'domain'    => $domain,
@@ -94,6 +96,7 @@ class Cpanel_Api_Zone_Edit extends Cpanel_Api_Query{
                                      $txtdata='',$cname='',$address='',
                                      $ttl='', $class=''){
         $input=array(
+                    'apiversion' => 2,
                     'module'    => 'ZoneEdit',
                     'function'  => 'edit_zone_record',
                     'domain'    => $domain,
@@ -132,6 +135,7 @@ class Cpanel_Api_Zone_Edit extends Cpanel_Api_Query{
      */
     public function remove_zone_record($domain, $line){
         $input=array(
+                    'apiversion' => 2,
                     'module'    => 'ZoneEdit',
                     'function'  => 'remove_zone_record',
                     'domain'    => $domain,
@@ -155,6 +159,7 @@ class Cpanel_Api_Zone_Edit extends Cpanel_Api_Query{
      */
     public function fetch_zone_records($domain){
         $input=array(
+                    'apiversion' => 2,
                     'module'    => 'ZoneEdit',
                     'function'  => 'fetchzone_records',
                     'domain'    => $domain
@@ -174,6 +179,7 @@ class Cpanel_Api_Zone_Edit extends Cpanel_Api_Query{
      */
     public function fetch_zones(){
         $input=array(
+                    'apiversion' => 2,
                     'module'    => 'ZoneEdit',
                     'function'  => 'fetchzones'
                     );
@@ -201,6 +207,7 @@ class Cpanel_Api_Zone_Edit extends Cpanel_Api_Query{
      */
     public function fetch_zone($domain, $key='',$customonly=''){
         $input=array(
+                    'apiversion' => 2,
                     'module'    => 'ZoneEdit',
                     'function'  => 'fetchzone',
                     'domain'    => $domain
@@ -226,6 +233,7 @@ class Cpanel_Api_Zone_Edit extends Cpanel_Api_Query{
      */
     public function reset_zone($domain){
         $input=array(
+                    'apiversion' => 2,
                     'module'    => 'ZoneEdit',
                     'function'  => 'resetzone',
                     'domain'    => $domain
