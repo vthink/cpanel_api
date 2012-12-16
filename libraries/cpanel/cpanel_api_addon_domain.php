@@ -5,6 +5,7 @@
  * Description of cpanel_api_addon_domain
  *
  * @author nunenuh@gmail.com
+ * @modified by: Dean Elzey @ BitShout
  */
 class Cpanel_Api_Addon_Domain extends Cpanel_Api_Query{
     private $param=array();
@@ -30,7 +31,8 @@ class Cpanel_Api_Addon_Domain extends Cpanel_Api_Query{
      */
     public function delete_addon_domain($domain, $subdomain){
         $input=array(
-                    'module'    => 'AddonDomain',
+                    'apiversion' => 2,
+            		'module'    => 'AddonDomain',
                     'function'  => 'deladdondomain',
                     'domain'    => $domain,
                     'subdomain' => $subdomain
@@ -56,7 +58,8 @@ class Cpanel_Api_Addon_Domain extends Cpanel_Api_Query{
      */
     public function add_addon_domain($dir, $new_domain, $subdomain){
         $input=array(
-                    'module'    => 'AddonDomain',
+                    'apiversion' => 2,
+        			'module'    => 'AddonDomain',
                     'function'  => 'addaddondomain',
                     'dir'       => $dir,
                     'newdomain' => $new_domain,
@@ -79,7 +82,8 @@ class Cpanel_Api_Addon_Domain extends Cpanel_Api_Query{
      */
     public function list_addon_domains($regex=''){
         $input=array(
-                    'module'    => 'AddonDomain',
+                    'apiversion' => 2,
+        			'module'    => 'AddonDomain',
                     'function'  => 'listaddondomains',
                     'regex'    => $regex
                     );
