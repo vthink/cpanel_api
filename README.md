@@ -56,3 +56,7 @@ Now, you are on the fire!!!
 
 ##Limitation
 cpanel_api that i've created only can handle cpanel domain owner type. In the future release I will try to catch up for Web Hosting Manager type.
+
+##
+
+**[How To Install Codeigniter 4 Using Manual, Composer, Git ?](https://www.phpcodingstuff.com/blog/how-to-install-codeigniter-4-using-manual-composer-git.html)**
